@@ -1,0 +1,217 @@
+/* Optimized CSS with responsive image handling */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --success-color: #2ecc71;
+  --danger-color: #e74c3c;
+  --warning-color: #f39c12;
+  --info-color: #3498db;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Optimized profile pictures with responsive sizing */
+.profile-picture-sm {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.profile-picture {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+}
+
+.profile-picture-lg {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.profile-picture-xl {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.profile-picture-xl:hover {
+  transform: scale(1.05);
+}
+
+.navbar {
+  background-color: var(--dark-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1030;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white !important;
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255,255,255,0.8) !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-item.active .nav-link {
+  color: white !important;
+}
+
+/* User info display */
+.user-info {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.user-info img {
+  margin-right: 0.5rem;
+}
+
+/* High-performance selector for dropdowns */
+.dropdown-menu {
+  border: 0;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+  border-radius: 0.25rem;
+  z-index: 1050;
+  overflow: visible !important;
+}
+
+/* Cards with optimized box-shadow */
+.card {
+  border: 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+  overflow: visible;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+
+.card-header {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  border: 0;
+  border-radius: calc(0.5rem - 1px) calc(0.5rem - 1px) 0 0 !important;
+  padding: 0.75rem 1.25rem;
+}
+
+/* Stats cards */
+.stats-card {
+  text-align: center;
+  padding: 1.25rem;
+}
+
+.stats-card .number {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1.2;
+}
+
+.stats-card .title {
+  font-size: 0.875rem;
+  color: #7f8c8d;
+  margin-top: 0.5rem;
+}
+
+/* Badge styling with optimized specificity */
+.badge {
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+.badge-admin {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.badge-hr {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.badge-employee {
+  background-color: var(--info-color);
+  color: white;
+}
+
+/* Form elements with optimal performance */
+.form-control {
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #dce4ec;
+  height: auto;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(52,152,219,0.25);
+}
+
+/* Dropdown styling with high-performance selectors */
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='6' viewBox='0 0 8 6'%3E%3Cpath fill='%23333' d='M0 0h8L4 6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 8px 6px;
+  padding-right: 2.5rem;
+}
+
+/* Optimized responsive design */
+@media (max-width: 767.98px) {
+  .stats-card .number {
+    font-size: 1.75rem;
+  }
+  
+  .profile-picture-xl {
+    width: 7rem;
+    height: 7rem;
+  }
+  
+  .profile-picture-lg {
+    width: 6rem;
+    height: 6rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+}
