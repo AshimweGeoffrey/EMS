@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Employee Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    
+    <div class="container mt-4">
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome to EMS</h1>
+            <p class="lead">Employee Management System - Manage your organization's workforce efficiently.</p>
+            <hr class="my-4">
+            <p>Use the navigation above to access different sections of the application.</p>
+            <a class="btn btn-primary btn-lg" th:href="@{/employees}" role="button">View Employees</a>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Employee Summary</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Department</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="employee : ${employees}">
+                                        <td th:text="${employee.id}"></td>
+                                        <td th:text="${employee.name}"></td>
+                                        <td th:text="${employee.position}"></td>
+                                        <td th:text="${employee.department}"></td>
+                                        <td th:text="${employee.email}"></td>
+                                    </tr>
+                                    <tr th:if="${employees.empty}">
+                                        <td colspan="5" class="text-center">No employees found</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div th:replace="fragments/footer :: footer"></div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
